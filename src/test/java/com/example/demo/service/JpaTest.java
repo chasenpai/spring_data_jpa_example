@@ -38,7 +38,7 @@ public class JpaTest {
     @Test
     void categorySave(){
         Category category = Category.builder()
-                .name("이어폰")
+                .name("휴대폰")
                 .build();
         categoryRepository.save(category);
     }
@@ -57,11 +57,11 @@ public class JpaTest {
     @Test
     void productAndProductDetailSave(){
 
-        Provider provider = providerRepository.findById(2L).orElseThrow(EntityNotFoundException::new);
-        Category category = categoryRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
+        Provider provider = providerRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
+        Category category = categoryRepository.findById(3L).orElseThrow(EntityNotFoundException::new);
 
         Product product = Product.builder()
-                .name("갤럭시 노트 10")
+                .name("갤럭시 폴드")
                 .price(1300000)
                 .stock(100)
                 .provider(provider)
@@ -69,7 +69,7 @@ public class JpaTest {
                 .build();
 
         ProductDetail productDetail = ProductDetail.builder()
-                .detail("퍼플")
+                .detail("그레이")
                 .product(product)
                 .build();
 
@@ -79,7 +79,48 @@ public class JpaTest {
     }
 
     /**
-     * cascade persist
+     * OneToOne 양방향 매핑
+     */
+    @Test
+    void selectProductAndProductDetail(){
+
+        Product product = productRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
+        System.out.println("product = " + product.getProductDetail());
+
+        ProductDetail productDetail = productDetailRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
+        System.out.println("productDetail = " + productDetail.getProduct());
+
+    }
+
+    /**
+     * not use cascade persist
+     */
+    @Test
+    @Commit
+    void saveProviderAndProductList(){
+
+        Provider provider = Provider.builder()
+                .name("애플")
+                .build();
+
+        List<Product> productList = new ArrayList<>();
+
+        for(int i = 8; i < 15; i++){
+            Product product = Product.builder()
+                    .name("아이폰 " + i)
+                    .price(50000)
+                    .stock(100)
+                    .provider(provider)
+                    .build();
+            productList.add(product);
+        }
+        provider.updateProductList(productList);
+
+        providerRepository.save(provider); //연관관계의 주인이 provider 가 아니기 때문에 product 는 저장되지 않는다
+    }
+
+    /**
+     * use cascade persist
      */
     @Test
     @Commit
@@ -125,19 +166,6 @@ public class JpaTest {
          * 두 옵션을 모두 활성화 하면 부모 엔티티로 자식 엔티티의 생명주기를 관리할 수 있다
          */
 
-    }
-
-    @Test
-    void productDetailSave(){
-
-        Product product = productRepository.findById(3L).orElseThrow(EntityNotFoundException::new);
-
-        ProductDetail productDetail = ProductDetail.builder()
-                .detail("화이트")
-                .product(product)
-                .build();
-
-        productDetailRepository.save(productDetail);
     }
 
 }

@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "provider")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class Provider extends BaseTimeEntity{
 
     @Id
@@ -18,7 +19,8 @@ public class Provider extends BaseTimeEntity{
 
     private String name;
 
-    @OneToMany(mappedBy = "provider", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @OneToMany(mappedBy = "provider", orphanRemoval = true, fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<Product> productList = new ArrayList<>();
 
     @Builder
@@ -27,4 +29,9 @@ public class Provider extends BaseTimeEntity{
         this.name = name;
         this.productList = productList;
     }
+
+    public void updateProductList(List<Product> productList){
+        this.productList = productList;
+    }
+
 }

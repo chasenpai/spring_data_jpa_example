@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "product")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString(callSuper = true)
 public class Product extends BaseTimeEntity{
 
     @Id
@@ -31,7 +32,8 @@ public class Product extends BaseTimeEntity{
     @JoinColumn(name = "provider_id")
     private Provider provider;
 
-    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = false)
+    @ToString.Exclude
     private ProductDetail productDetail;
 
     @Builder
