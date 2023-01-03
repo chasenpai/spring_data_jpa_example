@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
@@ -21,7 +20,7 @@ import java.util.List;
 
 @SpringBootTest
 @Transactional
-public class JpaTest {
+public class JpaEntityMappingTest {
 
     @Autowired
     ProductRepository productRepository;
@@ -52,38 +51,12 @@ public class JpaTest {
     }
 
     /**
-     * cascade persist
-     */
-    @Test
-    void productAndProductDetailSave(){
-
-        Provider provider = providerRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
-        Category category = categoryRepository.findById(3L).orElseThrow(EntityNotFoundException::new);
-
-        Product product = Product.builder()
-                .name("갤럭시 폴드")
-                .price(1300000)
-                .stock(100)
-                .provider(provider)
-                .category(category)
-                .build();
-
-        ProductDetail productDetail = ProductDetail.builder()
-                .detail("그레이")
-                .product(product)
-                .build();
-
-        product.updateDetail(productDetail);
-
-        productRepository.save(product); //cascade 로 영속성 전이가 발생하여 product 가 영속화될 때, productDetail 도 영속화
-    }
-
-    /**
-     * OneToOne 양방향 매핑
+     * 엔티티 양방향 매핑
      */
     @Test
     void selectProductAndProductDetail(){
 
+        //양방향으로 매핑된 엔티티는 서로를 참조할 수 있다
         Product product = productRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
         System.out.println("product = " + product.getProductDetail());
 
@@ -93,17 +66,40 @@ public class JpaTest {
     }
 
     /**
-     * not use cascade persist
+     * 지연로딩 & 즉시로딩
+     */
+    @Test
+    void selectProduct(){
+
+        /**
+         * 즉시로딩이 설정된 엔티티
+         * - 조회시 연관된 엔티티까지 조회해옴 > 연관관계가 복잡하다면 성능 저하를 일으킬 수 있음
+         */
+        Product product = productRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
+
+        /**
+         * 지연로딩이 설정된 엔티티
+         * - 연관된 엔티티를 사용하는 시점에 쿼리를 날림
+         * - OneToMany 의 경우 지연로딩(LAZY)이 기본 값이다
+         */
+        Provider provider = providerRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
+        System.out.println("productList = " + provider.getProductList());
+        //지연로딩으로 product 엔티티를 조회할 경우 트랜잭션처리가 되어있지 않으면 proxy no session 오류가 발생한다
+
+    }
+
+    /**
+     * cascade persist
      */
     @Test
     @Commit
-    void saveProviderAndProductList(){
+    void saveCategoryAndProductList(){
 
         Provider provider = Provider.builder()
                 .name("애플")
                 .build();
 
-        List<Product> productList = new ArrayList<>();
+        List<Product> productList1 = new ArrayList<>();
 
         for(int i = 8; i < 15; i++){
             Product product = Product.builder()
@@ -112,25 +108,18 @@ public class JpaTest {
                     .stock(100)
                     .provider(provider)
                     .build();
-            productList.add(product);
+            productList1.add(product);
         }
-        provider.updateProductList(productList);
+        provider.updateProductList(productList1);
 
         providerRepository.save(provider); //연관관계의 주인이 provider 가 아니기 때문에 product 는 저장되지 않는다
-    }
 
-    /**
-     * use cascade persist
-     */
-    @Test
-    @Commit
-    void saveCategoryAndProductList(){
-
+        //cascade persist 적용된 엔티티
         Category category = Category.builder()
                 .name("마우스")
                 .build();
 
-        List<Product> productList = new ArrayList<>();
+        List<Product> productList2 = new ArrayList<>();
 
         for(int i = 1; i < 6; i++){
             Product product = Product.builder()
@@ -139,9 +128,9 @@ public class JpaTest {
                     .stock(100)
                     .category(category)
                     .build();
-            productList.add(product);
+            productList2.add(product);
         }
-        category.updateProductList(productList);
+        category.updateProductList(productList2);
 
         categoryRepository.save(category); //cascade 로 영속성 전이가 발생하여 category 가 영속화될 때, product 도 영속화
     }

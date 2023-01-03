@@ -19,7 +19,7 @@ public class Provider extends BaseTimeEntity{
 
     private String name;
 
-    @OneToMany(mappedBy = "provider", orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "provider", orphanRemoval = true)
     @ToString.Exclude
     private List<Product> productList = new ArrayList<>();
 
