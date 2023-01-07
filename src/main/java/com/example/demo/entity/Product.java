@@ -32,7 +32,7 @@ public class Product extends BaseTimeEntity{
     @JoinColumn(name = "provider_id")
     private Provider provider;
 
-    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = false)
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
     @ToString.Exclude
     private ProductDetail productDetail;
 
