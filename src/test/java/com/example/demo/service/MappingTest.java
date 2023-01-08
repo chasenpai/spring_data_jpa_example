@@ -20,7 +20,7 @@ import java.util.List;
 
 @SpringBootTest
 @Transactional
-public class JpaEntityMappingTest {
+public class MappingTest {
 
     @Autowired
     ProductRepository productRepository;

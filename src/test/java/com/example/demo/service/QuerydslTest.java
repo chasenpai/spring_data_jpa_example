@@ -17,6 +17,9 @@ public class QuerydslTest {
     @Autowired
     ProductRepositoryCustom productRepositoryCustom;
 
+    /**
+     * 검색어
+     */
     @Test
     void getProductListBySearchKey(){
 
@@ -30,5 +33,26 @@ public class QuerydslTest {
         System.out.println(productList.get(0).getProvider().getName());
 
     }
+
+    /**
+     * 가격대
+     */
+    @Test
+    void getProductListByPrice(){
+
+        ProductSearch search = ProductSearch.builder()
+                .minPrice(50000)
+                .maxPrice(100000)
+                .build();
+
+        List<Product> productList = productRepositoryCustom.getProductList(search);
+        System.out.println(productList.get(0).getName());
+        System.out.println(productList.get(0).getPrice());
+
+    }
+
+    /**
+     * 페이징 처리
+     */
 
 }
