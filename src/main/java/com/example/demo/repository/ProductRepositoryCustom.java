@@ -12,6 +12,6 @@ public interface ProductRepositoryCustom {
 
     List<Product> getProductList(ProductSearch search);
 
-    Page<Product> getProductListPaging(ProductSearch search, Pageable pageable);
+    Page<Product> getProductListPaging(Pageable pageable);
 
 }

@@ -3,11 +3,14 @@ package com.example.demo.repository;
 import com.example.demo.dto.search.ProductSearch;
 import com.example.demo.entity.Product;
 import com.example.demo.entity.QProduct;
+import com.querydsl.core.QueryResults;
 import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.Wildcard;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
@@ -22,7 +25,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
     private final QProduct product = QProduct.product; //Q class
 
     /**
-     * 제품 목록
+     * 동적 쿼리 작성
      */
     @Override
     public List<Product> getProductList(ProductSearch search) {
@@ -69,10 +72,41 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
     }
 
     /**
-     * 페이징
+     * 페이징 기본
      */
     @Override
-    public Page<Product> getProductListPaging(ProductSearch search, Pageable pageable) {
-        return null;
+    public Page<Product> getProductListPaging(Pageable pageable) {
+
+        List<Product> productList = queryFactory
+                .selectFrom(product)
+                .orderBy(product.createdDate.desc()) //정렬 기준
+                .offset(pageable.getOffset()) //데이터 시작 index
+                .limit(pageable.getPageSize()) //최대 개수 지정
+                .fetch();
+
+        //fetchResult = deprecated.. 개수를 구하는 쿼리를 따로 날리는 방식을 권장
+        Long count = getProductListCount(pageable);
+
+        /**
+         * Page 의 구현체 PageImpl
+         *  - content : 페이지에 들어갈 List
+         * - pageable : 요청 페이지 정보
+         * - total : 들어갈 데이터의 총 개수
+         */
+        return new PageImpl<>(productList, pageable, count);
     }
+
+    /**
+     * 총 개수 쿼리
+     */
+    public Long getProductListCount(Pageable pageable){
+        return queryFactory
+                .select(Wildcard.count)
+                .from(product)
+                .orderBy(product.createdDate.desc()) //정렬 기준
+                .offset(pageable.getOffset()) //데이터 시작 index
+                .limit(pageable.getPageSize()) //최대 개수 지정
+                .fetchOne();
+    }
+
 }

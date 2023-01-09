@@ -6,6 +6,9 @@ import com.example.demo.repository.ProductRepositoryCustom;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -54,5 +57,14 @@ public class QuerydslTest {
     /**
      * 페이징 처리
      */
+    @Test
+    void getProductListPaging(){
+
+        Pageable pageable = PageRequest.of(0, 5); //시작 index, 가져올 개수 설정
+
+        Page<Product> productPage = productRepositoryCustom.getProductListPaging(pageable);
+        System.out.println(productPage.getContent());
+
+    }
 
 }
