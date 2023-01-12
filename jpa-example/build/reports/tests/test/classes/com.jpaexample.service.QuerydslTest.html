@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - QuerydslTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>QuerydslTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.jpaexample.service.html">com.jpaexample.service</a> &gt; QuerydslTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.270s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getProductListBySearchKey()</td>
+<td class="success">0.270s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>20:22:23.072 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:22:23.089 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:22:23.125 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.jpaexample.service.QuerydslTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+20:22:23.138 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.jpaexample.service.QuerydslTest], using SpringBootContextLoader
+20:22:23.144 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.jpaexample.service.QuerydslTest]: class path resource [com/jpaexample/service/QuerydslTest-context.xml] does not exist
+20:22:23.144 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.jpaexample.service.QuerydslTest]: class path resource [com/jpaexample/service/QuerydslTestContext.groovy] does not exist
+20:22:23.144 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.jpaexample.service.QuerydslTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:22:23.145 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.jpaexample.service.QuerydslTest]: QuerydslTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:22:23.192 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.jpaexample.service.QuerydslTest]
+20:22:23.259 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\chajunwoo\Desktop\project\spring data jpa example\jpa-example\build\classes\java\main\com\jpaexample\JpaExampleApplication.class]
+20:22:23.260 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.jpaexample.JpaExampleApplication for test class com.jpaexample.service.QuerydslTest
+20:22:23.379 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.jpaexample.service.QuerydslTest]: using defaults.
+20:22:23.380 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+20:22:23.400 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7674a051, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a7704c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6754ef00, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@619bd14c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@323e8306, org.springframework.test.context.support.DirtiesContextTestExecutionListener@a23a01d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4acf72b6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7561db12, org.springframework.test.context.event.EventPublishingTestExecutionListener@3301500b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@24b52d3e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@15deb1dc, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6e9c413e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@57a4d5ee, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5af5def9, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3a45c42a]
+20:22:23.404 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@50b0bc4c testClass = QuerydslTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@c20be82 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@e077866, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6d304f9d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51cd7ffc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6f2cb653, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@41925502, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.7)
+
+2023-01-12 20:22:23.761  INFO 5668 --- [    Test worker] com.jpaexample.service.QuerydslTest      : Starting QuerydslTest using Java 11.0.13 on DESKTOP-4H0VBKI with PID 5668 (started by chajunwoo in C:\Users\chajunwoo\Desktop\project\spring data jpa example\jpa-example)
+2023-01-12 20:22:23.763  INFO 5668 --- [    Test worker] com.jpaexample.service.QuerydslTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-01-12 20:22:24.541  INFO 5668 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-12 20:22:24.635  INFO 5668 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+2023-01-12 20:22:25.242  INFO 5668 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-12 20:22:25.324  INFO 5668 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-12 20:22:25.531  INFO 5668 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-12 20:22:25.683  INFO 5668 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-12 20:22:25.779  INFO 5668 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-12 20:22:25.805  INFO 5668 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2023-01-12 20:22:26.638  INFO 5668 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-12 20:22:26.649  INFO 5668 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-12 20:22:27.007  WARN 5668 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-12 20:22:28.983  INFO 5668 --- [    Test worker] com.jpaexample.service.QuerydslTest      : Started QuerydslTest in 5.538 seconds (JVM running for 6.927)
+2023-01-12 20:22:29.017  INFO 5668 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@50b0bc4c testClass = QuerydslTest, testInstance = com.jpaexample.service.QuerydslTest@30d2f9ea, testMethod = getProductListBySearchKey@QuerydslTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@c20be82 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@e077866, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6d304f9d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51cd7ffc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6f2cb653, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@41925502, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@4936fbc6]; rollback [true]
+Hibernate: 
+    select
+        product0_.id as id1_1_,
+        product0_.created_date as created_2_1_,
+        product0_.last_modified_date as last_mod3_1_,
+        product0_.category_id as category7_1_,
+        product0_.name as name4_1_,
+        product0_.price as price5_1_,
+        product0_.provider_id as provider8_1_,
+        product0_.stock as stock6_1_ 
+    from
+        product product0_ cross 
+    join
+        provider provider1_ 
+    where
+        product0_.provider_id=provider1_.id 
+        and (
+            provider1_.name like ? escape '!'
+        ) 
+        and product0_.stock&gt;?
+2023-01-12 20:22:29.194 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [%애플%]
+2023-01-12 20:22:29.195 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [INTEGER] - [0]
+2023-01-12 20:22:29.203 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1001]
+2023-01-12 20:22:29.209 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.937765]
+2023-01-12 20:22:29.209 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.937765]
+2023-01-12 20:22:29.209 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [null]
+2023-01-12 20:22:29.210 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [아이폰 8]
+2023-01-12 20:22:29.210 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [50000]
+2023-01-12 20:22:29.210 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [3]
+2023-01-12 20:22:29.211 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
+2023-01-12 20:22:29.212 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1002]
+2023-01-12 20:22:29.212 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.951769]
+2023-01-12 20:22:29.212 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.951769]
+2023-01-12 20:22:29.212 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [null]
+2023-01-12 20:22:29.212 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [아이폰 9]
+2023-01-12 20:22:29.212 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [50000]
+2023-01-12 20:22:29.212 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [3]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1003]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.952770]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.952770]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [null]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [아이폰 10]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [50000]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [3]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
+2023-01-12 20:22:29.213 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1004]
+2023-01-12 20:22:29.214 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.953770]
+2023-01-12 20:22:29.214 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.953770]
+2023-01-12 20:22:29.214 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [null]
+2023-01-12 20:22:29.214 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [아이폰 11]
+2023-01-12 20:22:29.214 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [50000]
+2023-01-12 20:22:29.214 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [3]
+2023-01-12 20:22:29.215 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
+2023-01-12 20:22:29.215 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1005]
+2023-01-12 20:22:29.215 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.953770]
+2023-01-12 20:22:29.215 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.953770]
+2023-01-12 20:22:29.215 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [null]
+2023-01-12 20:22:29.215 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [아이폰 12]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [50000]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [3]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1006]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.953770]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.953770]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [null]
+2023-01-12 20:22:29.216 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [아이폰 13]
+2023-01-12 20:22:29.217 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [50000]
+2023-01-12 20:22:29.217 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [3]
+2023-01-12 20:22:29.217 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
+2023-01-12 20:22:29.217 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1007]
+2023-01-12 20:22:29.217 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.954771]
+2023-01-12 20:22:29.217 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-02T20:34:24.954771]
+2023-01-12 20:22:29.217 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [null]
+2023-01-12 20:22:29.218 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [아이폰 14]
+2023-01-12 20:22:29.218 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [50000]
+2023-01-12 20:22:29.218 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [3]
+2023-01-12 20:22:29.218 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
+Hibernate: 
+    select
+        provider0_.id as id1_3_0_,
+        provider0_.created_date as created_2_3_0_,
+        provider0_.last_modified_date as last_mod3_3_0_,
+        provider0_.name as name4_3_0_ 
+    from
+        provider provider0_ 
+    where
+        provider0_.id=?
+2023-01-12 20:22:29.226 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [3]
+2023-01-12 20:22:29.230 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_3_0_] : [TIMESTAMP]) - [2023-01-02T20:34:24.870751]
+2023-01-12 20:22:29.231 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_3_0_] : [TIMESTAMP]) - [2023-01-02T20:34:24.870751]
+2023-01-12 20:22:29.231 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_3_0_] : [VARCHAR]) - [애플]
+Hibernate: 
+    select
+        productdet0_.id as id1_2_3_,
+        productdet0_.created_date as created_2_2_3_,
+        productdet0_.last_modified_date as last_mod3_2_3_,
+        productdet0_.detail as detail4_2_3_,
+        productdet0_.product_id as product_5_2_3_,
+        product1_.id as id1_1_0_,
+        product1_.created_date as created_2_1_0_,
+        product1_.last_modified_date as last_mod3_1_0_,
+        product1_.category_id as category7_1_0_,
+        product1_.name as name4_1_0_,
+        product1_.price as price5_1_0_,
+        product1_.provider_id as provider8_1_0_,
+        product1_.stock as stock6_1_0_,
+        category2_.id as id1_0_1_,
+        category2_.created_date as created_2_0_1_,
+        category2_.last_modified_date as last_mod3_0_1_,
+        category2_.name as name4_0_1_,
+        provider3_.id as id1_3_2_,
+        provider3_.created_date as created_2_3_2_,
+        provider3_.last_modified_date as last_mod3_3_2_,
+        provider3_.name as name4_3_2_ 
+    from
+        product_detail productdet0_ 
+    left outer join
+        product product1_ 
+            on productdet0_.product_id=product1_.id 
+    left outer join
+        category category2_ 
+            on product1_.category_id=category2_.id 
+    left outer join
+        provider provider3_ 
+            on product1_.provider_id=provider3_.id 
+    where
+        productdet0_.product_id=?
+2023-01-12 20:22:29.243 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1001]
+Hibernate: 
+    select
+        productdet0_.id as id1_2_3_,
+        productdet0_.created_date as created_2_2_3_,
+        productdet0_.last_modified_date as last_mod3_2_3_,
+        productdet0_.detail as detail4_2_3_,
+        productdet0_.product_id as product_5_2_3_,
+        product1_.id as id1_1_0_,
+        product1_.created_date as created_2_1_0_,
+        product1_.last_modified_date as last_mod3_1_0_,
+        product1_.category_id as category7_1_0_,
+        product1_.name as name4_1_0_,
+        product1_.price as price5_1_0_,
+        product1_.provider_id as provider8_1_0_,
+        product1_.stock as stock6_1_0_,
+        category2_.id as id1_0_1_,
+        category2_.created_date as created_2_0_1_,
+        category2_.last_modified_date as last_mod3_0_1_,
+        category2_.name as name4_0_1_,
+        provider3_.id as id1_3_2_,
+        provider3_.created_date as created_2_3_2_,
+        provider3_.last_modified_date as last_mod3_3_2_,
+        provider3_.name as name4_3_2_ 
+    from
+        product_detail productdet0_ 
+    left outer join
+        product product1_ 
+            on productdet0_.product_id=product1_.id 
+    left outer join
+        category category2_ 
+            on product1_.category_id=category2_.id 
+    left outer join
+        provider provider3_ 
+            on product1_.provider_id=provider3_.id 
+    where
+        productdet0_.product_id=?
+2023-01-12 20:22:29.246 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1002]
+Hibernate: 
+    select
+        productdet0_.id as id1_2_3_,
+        productdet0_.created_date as created_2_2_3_,
+        productdet0_.last_modified_date as last_mod3_2_3_,
+        productdet0_.detail as detail4_2_3_,
+        productdet0_.product_id as product_5_2_3_,
+        product1_.id as id1_1_0_,
+        product1_.created_date as created_2_1_0_,
+        product1_.last_modified_date as last_mod3_1_0_,
+        product1_.category_id as category7_1_0_,
+        product1_.name as name4_1_0_,
+        product1_.price as price5_1_0_,
+        product1_.provider_id as provider8_1_0_,
+        product1_.stock as stock6_1_0_,
+        category2_.id as id1_0_1_,
+        category2_.created_date as created_2_0_1_,
+        category2_.last_modified_date as last_mod3_0_1_,
+        category2_.name as name4_0_1_,
+        provider3_.id as id1_3_2_,
+        provider3_.created_date as created_2_3_2_,
+        provider3_.last_modified_date as last_mod3_3_2_,
+        provider3_.name as name4_3_2_ 
+    from
+        product_detail productdet0_ 
+    left outer join
+        product product1_ 
+            on productdet0_.product_id=product1_.id 
+    left outer join
+        category category2_ 
+            on product1_.category_id=category2_.id 
+    left outer join
+        provider provider3_ 
+            on product1_.provider_id=provider3_.id 
+    where
+        productdet0_.product_id=?
+2023-01-12 20:22:29.247 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1003]
+Hibernate: 
+    select
+        productdet0_.id as id1_2_3_,
+        productdet0_.created_date as created_2_2_3_,
+        productdet0_.last_modified_date as last_mod3_2_3_,
+        productdet0_.detail as detail4_2_3_,
+        productdet0_.product_id as product_5_2_3_,
+        product1_.id as id1_1_0_,
+        product1_.created_date as created_2_1_0_,
+        product1_.last_modified_date as last_mod3_1_0_,
+        product1_.category_id as category7_1_0_,
+        product1_.name as name4_1_0_,
+        product1_.price as price5_1_0_,
+        product1_.provider_id as provider8_1_0_,
+        product1_.stock as stock6_1_0_,
+        category2_.id as id1_0_1_,
+        category2_.created_date as created_2_0_1_,
+        category2_.last_modified_date as last_mod3_0_1_,
+        category2_.name as name4_0_1_,
+        provider3_.id as id1_3_2_,
+        provider3_.created_date as created_2_3_2_,
+        provider3_.last_modified_date as last_mod3_3_2_,
+        provider3_.name as name4_3_2_ 
+    from
+        product_detail productdet0_ 
+    left outer join
+        product product1_ 
+            on productdet0_.product_id=product1_.id 
+    left outer join
+        category category2_ 
+            on product1_.category_id=category2_.id 
+    left outer join
+        provider provider3_ 
+            on product1_.provider_id=provider3_.id 
+    where
+        productdet0_.product_id=?
+2023-01-12 20:22:29.249 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1004]
+Hibernate: 
+    select
+        productdet0_.id as id1_2_3_,
+        productdet0_.created_date as created_2_2_3_,
+        productdet0_.last_modified_date as last_mod3_2_3_,
+        productdet0_.detail as detail4_2_3_,
+        productdet0_.product_id as product_5_2_3_,
+        product1_.id as id1_1_0_,
+        product1_.created_date as created_2_1_0_,
+        product1_.last_modified_date as last_mod3_1_0_,
+        product1_.category_id as category7_1_0_,
+        product1_.name as name4_1_0_,
+        product1_.price as price5_1_0_,
+        product1_.provider_id as provider8_1_0_,
+        product1_.stock as stock6_1_0_,
+        category2_.id as id1_0_1_,
+        category2_.created_date as created_2_0_1_,
+        category2_.last_modified_date as last_mod3_0_1_,
+        category2_.name as name4_0_1_,
+        provider3_.id as id1_3_2_,
+        provider3_.created_date as created_2_3_2_,
+        provider3_.last_modified_date as last_mod3_3_2_,
+        provider3_.name as name4_3_2_ 
+    from
+        product_detail productdet0_ 
+    left outer join
+        product product1_ 
+            on productdet0_.product_id=product1_.id 
+    left outer join
+        category category2_ 
+            on product1_.category_id=category2_.id 
+    left outer join
+        provider provider3_ 
+            on product1_.provider_id=provider3_.id 
+    where
+        productdet0_.product_id=?
+2023-01-12 20:22:29.250 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1005]
+Hibernate: 
+    select
+        productdet0_.id as id1_2_3_,
+        productdet0_.created_date as created_2_2_3_,
+        productdet0_.last_modified_date as last_mod3_2_3_,
+        productdet0_.detail as detail4_2_3_,
+        productdet0_.product_id as product_5_2_3_,
+        product1_.id as id1_1_0_,
+        product1_.created_date as created_2_1_0_,
+        product1_.last_modified_date as last_mod3_1_0_,
+        product1_.category_id as category7_1_0_,
+        product1_.name as name4_1_0_,
+        product1_.price as price5_1_0_,
+        product1_.provider_id as provider8_1_0_,
+        product1_.stock as stock6_1_0_,
+        category2_.id as id1_0_1_,
+        category2_.created_date as created_2_0_1_,
+        category2_.last_modified_date as last_mod3_0_1_,
+        category2_.name as name4_0_1_,
+        provider3_.id as id1_3_2_,
+        provider3_.created_date as created_2_3_2_,
+        provider3_.last_modified_date as last_mod3_3_2_,
+        provider3_.name as name4_3_2_ 
+    from
+        product_detail productdet0_ 
+    left outer join
+        product product1_ 
+            on productdet0_.product_id=product1_.id 
+    left outer join
+        category category2_ 
+            on product1_.category_id=category2_.id 
+    left outer join
+        provider provider3_ 
+            on product1_.provider_id=provider3_.id 
+    where
+        productdet0_.product_id=?
+2023-01-12 20:22:29.252 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1006]
+Hibernate: 
+    select
+        productdet0_.id as id1_2_3_,
+        productdet0_.created_date as created_2_2_3_,
+        productdet0_.last_modified_date as last_mod3_2_3_,
+        productdet0_.detail as detail4_2_3_,
+        productdet0_.product_id as product_5_2_3_,
+        product1_.id as id1_1_0_,
+        product1_.created_date as created_2_1_0_,
+        product1_.last_modified_date as last_mod3_1_0_,
+        product1_.category_id as category7_1_0_,
+        product1_.name as name4_1_0_,
+        product1_.price as price5_1_0_,
+        product1_.provider_id as provider8_1_0_,
+        product1_.stock as stock6_1_0_,
+        category2_.id as id1_0_1_,
+        category2_.created_date as created_2_0_1_,
+        category2_.last_modified_date as last_mod3_0_1_,
+        category2_.name as name4_0_1_,
+        provider3_.id as id1_3_2_,
+        provider3_.created_date as created_2_3_2_,
+        provider3_.last_modified_date as last_mod3_3_2_,
+        provider3_.name as name4_3_2_ 
+    from
+        product_detail productdet0_ 
+    left outer join
+        product product1_ 
+            on productdet0_.product_id=product1_.id 
+    left outer join
+        category category2_ 
+            on product1_.category_id=category2_.id 
+    left outer join
+        provider provider3_ 
+            on product1_.provider_id=provider3_.id 
+    where
+        productdet0_.product_id=?
+2023-01-12 20:22:29.254 TRACE 5668 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1007]
+아이폰 8
+애플
+2023-01-12 20:22:29.269  INFO 5668 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@50b0bc4c testClass = QuerydslTest, testInstance = com.jpaexample.service.QuerydslTest@30d2f9ea, testMethod = getProductListBySearchKey@QuerydslTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@c20be82 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@e077866, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6d304f9d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@51cd7ffc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@6f2cb653, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@41925502, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6</a> at Jan 12, 2023, 8:22:29 PM</p>
+</div>
+</div>
+</body>
+</html>
