@@ -1,5 +1,6 @@
 package com.jpaexample.repository;
 
+import com.jpaexample.dto.ProductDto;
 import com.jpaexample.dto.search.ProductSearch;
 import com.jpaexample.entity.Product;
 import org.springframework.data.domain.Page;
@@ -12,5 +13,11 @@ public interface ProductRepositoryCustom {
     List<Product> getProductList(ProductSearch search);
 
     Page<Product> getProductListPaging(Pageable pageable);
+
+    List<ProductDto> getProductDtoList();
+
+    List<Product> getProductListJoin();
+
+    List<Product> getProductListTest();
 
 }

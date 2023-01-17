@@ -1,8 +1,11 @@
 package com.jpaexample.repository;
 
+import com.jpaexample.dto.ProductDto;
+import com.jpaexample.dto.QProductDto;
 import com.jpaexample.dto.search.ProductSearch;
 import com.jpaexample.entity.Product;
 import com.jpaexample.entity.QProduct;
+import com.jpaexample.entity.QProductDetail;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.Wildcard;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -22,6 +25,8 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
     private final JPAQueryFactory queryFactory;
 
     private final QProduct product = QProduct.product; //Q class
+
+    private final QProductDetail productDetail = QProductDetail.productDetail;
 
     /**
      * 동적 쿼리 작성
@@ -108,4 +113,44 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
                 .fetchOne();
     }
 
+    /**
+     * Projection
+     * 테이블에서 원하는 컬럼만 뽑아서 조회할 수 있다
+     * 아래 예시는 @QueryProjection 을 사용한 불변 QDto 클래스 생성 방식
+     */
+    @Override
+    public List<ProductDto> getProductDtoList() {
+        return queryFactory
+                .select(
+                        new QProductDto(
+                                product.id,
+                                product.category.name,
+                                product.provider.name,
+                                product.name,
+                                product.price,
+                                product.productDetail.detail
+                        )
+                )
+                .from(product)
+                .fetch();
+    }
+
+    @Override
+    public List<Product> getProductListJoin() {
+        return queryFactory
+                .selectFrom(product)
+                .join(productDetail)
+                .on(product.id.eq(productDetail.product.id))
+                .fetch();
+    }
+
+    @Override
+    public List<Product> getProductListTest() {
+        return queryFactory
+                .selectFrom(product)
+                .where(
+                        product.id.eq(productDetail.product.id)
+                )
+                .fetch();
+    }
 }

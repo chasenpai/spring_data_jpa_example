@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Data
 public class ProductDto {
 
-    private int id;
+    private Long id;
 
     private String category;
 
@@ -16,7 +16,7 @@ public class ProductDto {
 
     private String name;
 
-    private String price;
+    private int price;
 
     private String stock;
 
@@ -27,7 +27,7 @@ public class ProductDto {
     private LocalDateTime lastModifiedDate;
 
     @QueryProjection
-    public ProductDto(int id, String category, String provider, String name, String price, String detail) {
+    public ProductDto(Long id,String category, String provider, String name, int price, String detail) {
         this.id = id;
         this.category = category;
         this.provider = provider;

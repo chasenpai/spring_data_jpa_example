@@ -67,4 +67,15 @@ public class QuerydslTest {
 
     }
 
+    @Test
+    void getProductListJoin(){
+
+//        List<Product> productList = productRepositoryCustom.getProductListJoin();
+//        System.out.println(productList);
+
+        List<Product> productList1Test = productRepositoryCustom.getProductListTest();
+        System.out.println(productList1Test);
+
+    }
+
 }
