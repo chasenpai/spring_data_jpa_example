@@ -1,5 +1,6 @@
 package com.jpaexample.service;
 
+import com.jpaexample.dto.CategoryProviderDto;
 import com.jpaexample.dto.search.ProductSearch;
 import com.jpaexample.entity.Product;
 import com.jpaexample.repository.ProductRepositoryCustom;
@@ -70,12 +71,16 @@ public class QuerydslTest {
     @Test
     void getProductListJoin(){
 
-//        List<Product> productList = productRepositoryCustom.getProductListJoin();
-//        System.out.println(productList);
+        String categoryName = "이어폰";
 
-        List<Product> productList1Test = productRepositoryCustom.getProductListTest();
-        System.out.println(productList1Test);
+        List<Product> productList1 = productRepositoryCustom.getProductListJoin(categoryName);
+//        System.out.println(productList1.get(0));
 
+        //List<Product> productList2 = productRepositoryCustom.getProductListTest(categoryName);
+        //System.out.println(productList2.get(0));
+        //System.out.println(productList2.get(0).getProductDetail().getDetail());
+
+        List<CategoryProviderDto> categoryProviderDtoList = productRepositoryCustom.getCategoryProvider("아이폰8");
     }
 
 }

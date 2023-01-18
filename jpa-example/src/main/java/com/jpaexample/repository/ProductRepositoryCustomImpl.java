@@ -1,11 +1,11 @@
 package com.jpaexample.repository;
 
+import com.jpaexample.dto.CategoryProviderDto;
 import com.jpaexample.dto.ProductDto;
+import com.jpaexample.dto.QCategoryProviderDto;
 import com.jpaexample.dto.QProductDto;
 import com.jpaexample.dto.search.ProductSearch;
-import com.jpaexample.entity.Product;
-import com.jpaexample.entity.QProduct;
-import com.jpaexample.entity.QProductDetail;
+import com.jpaexample.entity.*;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.Wildcard;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -23,9 +23,9 @@ import java.util.List;
 public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
 
     private final JPAQueryFactory queryFactory;
-
     private final QProduct product = QProduct.product; //Q class
-
+    private final QCategory category = QCategory.category;
+    private final QProvider provider = QProvider.provider;
     private final QProductDetail productDetail = QProductDetail.productDetail;
 
     /**
@@ -136,20 +136,20 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
     }
 
     @Override
-    public List<Product> getProductListJoin() {
+    public List<Product> getProductListJoin(String categoryName) {
         return queryFactory
                 .selectFrom(product)
-                .join(productDetail)
-                .on(product.id.eq(productDetail.product.id))
+                .join(product.category, category)
+                .on(category.name.eq(categoryName))
                 .fetch();
     }
 
     @Override
-    public List<Product> getProductListTest() {
+    public List<Product> getProductListTest(String categoryName) {
         return queryFactory
                 .selectFrom(product)
                 .where(
-                        product.id.eq(productDetail.product.id)
+                        product.category.name.eq(categoryName)
                 )
                 .fetch();
     }

@@ -35,14 +35,16 @@ public class MappingTest {
     ProductDetailRepository productDetailRepository;
 
     @Test
+    @Commit
     void categorySave(){
         Category category = Category.builder()
-                .name("휴대폰")
+                .name("이어폰")
                 .build();
         categoryRepository.save(category);
     }
 
     @Test
+    @Commit
     void providerSave(){
         Provider provider = Provider.builder()
                 .name("삼성")

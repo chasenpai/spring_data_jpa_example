@@ -16,8 +16,8 @@ public interface ProductRepositoryCustom {
 
     List<ProductDto> getProductDtoList();
 
-    List<Product> getProductListJoin();
+    List<Product> getProductListJoin(String categoryName);
 
-    List<Product> getProductListTest();
+    List<Product> getProductListTest(String categoryName);
 
 }
