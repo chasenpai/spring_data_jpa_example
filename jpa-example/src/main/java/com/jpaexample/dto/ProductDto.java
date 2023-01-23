@@ -27,12 +27,9 @@ public class ProductDto {
     private LocalDateTime lastModifiedDate;
 
     @QueryProjection
-    public ProductDto(Long id,String category, String provider, String name, int price, String detail) {
-        this.id = id;
+    public ProductDto(String category, String provider, int price) {
         this.category = category;
         this.provider = provider;
-        this.name = name;
         this.price = price;
-        this.detail = detail;
     }
 }

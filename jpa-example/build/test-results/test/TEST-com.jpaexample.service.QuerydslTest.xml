@@ -1,164 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jpaexample.service.QuerydslTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-01-18T11:19:48" hostname="DESKTOP-4H0VBKI" time="0.278">
+<testsuite name="com.jpaexample.service.QuerydslTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-23T12:48:07" hostname="DESKTOP-4H0VBKI" time="0.202">
   <properties/>
-  <testcase name="getProductListJoin()" classname="com.jpaexample.service.QuerydslTest" time="0.278">
-    <failure message="org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name&#10;from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider&#10;where product.name = ?1]; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name&#10;from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider&#10;where product.name = ?1]" type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name
-from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider
-where product.name = ?1]; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name
-from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider
-where product.name = ?1]
-	at app//org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:374)
-	at app//org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:235)
-	at app//org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551)
-	at app//org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
-	at app//org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242)
-	at app//org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
-	at app//org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at app//org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at app//org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at app//com.jpaexample.repository.ProductRepositoryCustomImpl$$EnhancerBySpringCGLIB$$76bda6f5.getCategoryProvider(&lt;generated&gt;)
-	at app//com.jpaexample.service.QuerydslTest.getProductListJoin(QuerydslTest.java:83)
-	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
-	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at app//org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at app//org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base@11.0.13/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@11.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base@11.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@11.0.13/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name
-from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider
-where product.name = ?1]
-	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138)
-	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
-	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:757)
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311)
-	at com.sun.proxy.$Proxy124.createQuery(Unknown Source)
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:132)
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:125)
-	at com.querydsl.jpa.impl.AbstractJPAQuery.fetch(AbstractJPAQuery.java:242)
-	at com.jpaexample.repository.ProductRepositoryCustomImpl.getCategoryProvider(ProductRepositoryCustomImpl.java:168)
-	at com.jpaexample.repository.ProductRepositoryCustomImpl$$FastClassBySpringCGLIB$$3ce4e158.invoke(&lt;generated&gt;)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	... 90 more
-Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name
-from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider
-where product.name = ?1]
-	at app//org.hibernate.hql.internal.ast.QuerySyntaxException.convert(QuerySyntaxException.java:74)
-	at app//org.hibernate.hql.internal.ast.ErrorTracker.throwQueryException(ErrorTracker.java:93)
-	at app//org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:282)
-	at app//org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:192)
-	at app//org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144)
-	at app//org.hibernate.engine.query.spi.HQLQueryPlan.&lt;init&gt;(HQLQueryPlan.java:113)
-	at app//org.hibernate.engine.query.spi.HQLQueryPlan.&lt;init&gt;(HQLQueryPlan.java:73)
-	at app//org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162)
-	at app//org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:636)
-	at app//org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:748)
-	... 107 more
-</failure>
-  </testcase>
-  <system-out><![CDATA[20:19:43.617 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-20:19:43.632 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-20:19:43.668 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.jpaexample.service.QuerydslTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-20:19:43.681 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.jpaexample.service.QuerydslTest], using SpringBootContextLoader
-20:19:43.686 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.jpaexample.service.QuerydslTest]: class path resource [com/jpaexample/service/QuerydslTest-context.xml] does not exist
-20:19:43.686 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.jpaexample.service.QuerydslTest]: class path resource [com/jpaexample/service/QuerydslTestContext.groovy] does not exist
-20:19:43.687 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.jpaexample.service.QuerydslTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-20:19:43.687 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.jpaexample.service.QuerydslTest]: QuerydslTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-20:19:43.736 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.jpaexample.service.QuerydslTest]
-20:19:43.803 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\chajunwoo\Desktop\project\spring data jpa example\jpa-example\build\classes\java\main\com\jpaexample\JpaExampleApplication.class]
-20:19:43.804 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.jpaexample.JpaExampleApplication for test class com.jpaexample.service.QuerydslTest
-20:19:43.912 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.jpaexample.service.QuerydslTest]: using defaults.
-20:19:43.913 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-20:19:43.930 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6e9c413e, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@57a4d5ee, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5af5def9, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3a45c42a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@36dce7ed, org.springframework.test.context.support.DirtiesContextTestExecutionListener@47a64f7d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@33d05366, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@27a0a5a2, org.springframework.test.context.event.EventPublishingTestExecutionListener@7692cd34, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@33aa93c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@32c0915e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@106faf11, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@70f43b45, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@26d10f2e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@10ad20cb]
-20:19:43.934 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6a175569 testClass = QuerydslTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@11963225 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@ed3068a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@f73dcd6, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@30d4b288, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@14c01636, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@13e3c1c7, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+  <testcase name="getProductCaseStock()" classname="com.jpaexample.service.QuerydslTest" time="0.202"/>
+  <system-out><![CDATA[21:48:02.630 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+21:48:02.642 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+21:48:02.675 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.jpaexample.service.QuerydslTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+21:48:02.687 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.jpaexample.service.QuerydslTest], using SpringBootContextLoader
+21:48:02.691 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.jpaexample.service.QuerydslTest]: class path resource [com/jpaexample/service/QuerydslTest-context.xml] does not exist
+21:48:02.692 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.jpaexample.service.QuerydslTest]: class path resource [com/jpaexample/service/QuerydslTestContext.groovy] does not exist
+21:48:02.692 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.jpaexample.service.QuerydslTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+21:48:02.693 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.jpaexample.service.QuerydslTest]: QuerydslTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:48:02.736 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.jpaexample.service.QuerydslTest]
+21:48:02.795 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\chajunwoo\Desktop\project\spring data jpa example\jpa-example\build\classes\java\main\com\jpaexample\JpaExampleApplication.class]
+21:48:02.797 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.jpaexample.JpaExampleApplication for test class com.jpaexample.service.QuerydslTest
+21:48:02.905 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.jpaexample.service.QuerydslTest]: using defaults.
+21:48:02.906 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+21:48:02.924 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3a45c42a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@36dce7ed, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@47a64f7d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@33d05366, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@27a0a5a2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7692cd34, org.springframework.test.context.transaction.TransactionalTestExecutionListener@33aa93c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@32c0915e, org.springframework.test.context.event.EventPublishingTestExecutionListener@106faf11, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@70f43b45, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@26d10f2e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@10ad20cb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7dd712e8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2c282004, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@22ee2d0]
+21:48:02.927 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@11ee02f8 testClass = QuerydslTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4102b1b1 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@a8e6492, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40499e4f, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7a791b66, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@61884cb1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6c6c5427, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -168,498 +26,76 @@ where product.name = ?1]
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.7.7)
 
-2023-01-18 20:19:44.255  INFO 22084 --- [    Test worker] com.jpaexample.service.QuerydslTest      : Starting QuerydslTest using Java 11.0.13 on DESKTOP-4H0VBKI with PID 22084 (started by chajunwoo in C:\Users\chajunwoo\Desktop\project\spring data jpa example\jpa-example)
-2023-01-18 20:19:44.256  INFO 22084 --- [    Test worker] com.jpaexample.service.QuerydslTest      : No active profile set, falling back to 1 default profile: "default"
-2023-01-18 20:19:44.856  INFO 22084 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-18 20:19:44.925  INFO 22084 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
-2023-01-18 20:19:45.456  INFO 22084 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-18 20:19:45.523  INFO 22084 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2023-01-18 20:19:45.719  INFO 22084 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-18 20:19:45.858  INFO 22084 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-18 20:19:45.938  INFO 22084 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-18 20:19:45.961  INFO 22084 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
-2023-01-18 20:19:46.758  INFO 22084 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-18 20:19:46.769  INFO 22084 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-18 20:19:47.147  WARN 22084 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-18 20:19:48.467  INFO 22084 --- [    Test worker] com.jpaexample.service.QuerydslTest      : Started QuerydslTest in 4.496 seconds (JVM running for 5.792)
-2023-01-18 20:19:48.507  INFO 22084 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@6a175569 testClass = QuerydslTest, testInstance = com.jpaexample.service.QuerydslTest@22f0e329, testMethod = getProductListJoin@QuerydslTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@11963225 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@ed3068a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@f73dcd6, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@30d4b288, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@14c01636, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@13e3c1c7, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@610d0067]; rollback [true]
+2023-01-23 21:48:03.248  INFO 30128 --- [    Test worker] com.jpaexample.service.QuerydslTest      : Starting QuerydslTest using Java 11.0.13 on DESKTOP-4H0VBKI with PID 30128 (started by chajunwoo in C:\Users\chajunwoo\Desktop\project\spring data jpa example\jpa-example)
+2023-01-23 21:48:03.249  INFO 30128 --- [    Test worker] com.jpaexample.service.QuerydslTest      : No active profile set, falling back to 1 default profile: "default"
+2023-01-23 21:48:03.857  INFO 30128 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-23 21:48:03.931  INFO 30128 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 4 JPA repository interfaces.
+2023-01-23 21:48:04.505  INFO 30128 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-23 21:48:04.573  INFO 30128 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-01-23 21:48:04.776  INFO 30128 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-23 21:48:04.919  INFO 30128 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-23 21:48:04.997  INFO 30128 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-23 21:48:05.021  INFO 30128 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2023-01-23 21:48:05.838  INFO 30128 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-23 21:48:05.849  INFO 30128 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-23 21:48:06.230  WARN 30128 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-23 21:48:07.650  INFO 30128 --- [    Test worker] com.jpaexample.service.QuerydslTest      : Started QuerydslTest in 4.686 seconds (JVM running for 5.96)
+2023-01-23 21:48:07.683  INFO 30128 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@11ee02f8 testClass = QuerydslTest, testInstance = com.jpaexample.service.QuerydslTest@7552f05b, testMethod = getProductCaseStock@QuerydslTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4102b1b1 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@a8e6492, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40499e4f, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7a791b66, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@61884cb1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6c6c5427, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@5325674a]; rollback [true]
 Hibernate: 
     select
-        product0_.id as id1_1_,
-        product0_.created_date as created_2_1_,
-        product0_.last_modified_date as last_mod3_1_,
-        product0_.category_id as category7_1_,
-        product0_.name as name4_1_,
-        product0_.price as price5_1_,
-        product0_.provider_id as provider8_1_,
-        product0_.stock as stock6_1_ 
+        product0_.name as col_0_0_,
+        case 
+            when product0_.stock>? then ? 
+            when product0_.stock between ? and ? then ? 
+            else '품절' 
+        end as col_1_0_ 
     from
-        product product0_ 
-    inner join
-        category category1_ 
-            on product0_.category_id=category1_.id 
-            and (
-                category1_.name=?
-            )
-2023-01-18 20:19:48.674 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [이어폰]
-2023-01-18 20:19:48.681 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_] : [BIGINT]) - [1017]
-2023-01-18 20:19:48.687 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_1_] : [TIMESTAMP]) - [2023-01-10T19:55:10.989724]
-2023-01-18 20:19:48.687 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_1_] : [TIMESTAMP]) - [2023-01-10T19:55:10.989724]
-2023-01-18 20:19:48.687 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([category7_1_] : [BIGINT]) - [10]
-2023-01-18 20:19:48.688 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_1_] : [VARCHAR]) - [에어팟]
-2023-01-18 20:19:48.689 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([price5_1_] : [INTEGER]) - [200000]
-2023-01-18 20:19:48.689 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([provider8_1_] : [BIGINT]) - [null]
-2023-01-18 20:19:48.689 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([stock6_1_] : [INTEGER]) - [100]
-Hibernate: 
-    select
-        category0_.id as id1_0_0_,
-        category0_.created_date as created_2_0_0_,
-        category0_.last_modified_date as last_mod3_0_0_,
-        category0_.name as name4_0_0_ 
-    from
-        category category0_ 
-    where
-        category0_.id=?
-2023-01-18 20:19:48.697 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [10]
-2023-01-18 20:19:48.700 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_0_0_] : [TIMESTAMP]) - [2023-01-18T19:59:53.356042]
-2023-01-18 20:19:48.700 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_0_0_] : [TIMESTAMP]) - [2023-01-18T19:59:53.356042]
-2023-01-18 20:19:48.700 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([name4_0_0_] : [VARCHAR]) - [이어폰]
-Hibernate: 
-    select
-        productdet0_.id as id1_2_3_,
-        productdet0_.created_date as created_2_2_3_,
-        productdet0_.last_modified_date as last_mod3_2_3_,
-        productdet0_.detail as detail4_2_3_,
-        productdet0_.product_id as product_5_2_3_,
-        product1_.id as id1_1_0_,
-        product1_.created_date as created_2_1_0_,
-        product1_.last_modified_date as last_mod3_1_0_,
-        product1_.category_id as category7_1_0_,
-        product1_.name as name4_1_0_,
-        product1_.price as price5_1_0_,
-        product1_.provider_id as provider8_1_0_,
-        product1_.stock as stock6_1_0_,
-        category2_.id as id1_0_1_,
-        category2_.created_date as created_2_0_1_,
-        category2_.last_modified_date as last_mod3_0_1_,
-        category2_.name as name4_0_1_,
-        provider3_.id as id1_3_2_,
-        provider3_.created_date as created_2_3_2_,
-        provider3_.last_modified_date as last_mod3_3_2_,
-        provider3_.name as name4_3_2_ 
-    from
-        product_detail productdet0_ 
-    left outer join
-        product product1_ 
-            on productdet0_.product_id=product1_.id 
-    left outer join
-        category category2_ 
-            on product1_.category_id=category2_.id 
-    left outer join
-        provider provider3_ 
-            on product1_.provider_id=provider3_.id 
-    where
-        productdet0_.product_id=?
-2023-01-18 20:19:48.710 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1017]
-2023-01-18 20:19:48.711 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_1_0_] : [BIGINT]) - [1017]
-2023-01-18 20:19:48.711 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_0_1_] : [BIGINT]) - [10]
-2023-01-18 20:19:48.711 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_3_2_] : [BIGINT]) - [null]
-2023-01-18 20:19:48.711 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([id1_2_3_] : [BIGINT]) - [3]
-2023-01-18 20:19:48.711 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([created_2_2_3_] : [TIMESTAMP]) - [2023-01-01T20:13:34.798]
-2023-01-18 20:19:48.712 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([last_mod3_2_3_] : [TIMESTAMP]) - [2023-01-01T20:13:34.798]
-2023-01-18 20:19:48.712 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([detail4_2_3_] : [VARCHAR]) - [화이트]
-2023-01-18 20:19:48.712 TRACE 22084 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([product_5_2_3_] : [BIGINT]) - [1017]
-2023-01-18 20:19:48.722 ERROR 22084 --- [    Test worker] o.h.hql.internal.ast.ErrorTracker        :  Invalid path: 'product.name'
-2023-01-18 20:19:48.732 ERROR 22084 --- [    Test worker] o.h.hql.internal.ast.ErrorTracker        :  Invalid path: 'product.name'
-
-org.hibernate.hql.internal.ast.InvalidPathException: Invalid path: 'product.name'
-	at org.hibernate.hql.internal.ast.util.LiteralProcessor.lookupConstant(LiteralProcessor.java:111) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:218) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolve(HqlSqlWalker.java:1066) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.expr(HqlSqlBaseWalker.java:1319) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4797) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4261) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2180) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:841) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:635) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:339) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:287) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:276) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:192) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:636) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:748) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.24.jar:5.3.24]
-	at com.sun.proxy.$Proxy124.createQuery(Unknown Source) ~[na:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:132) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:125) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.fetch(AbstractJPAQuery.java:242) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl.getCategoryProvider(ProductRepositoryCustomImpl.java:168) ~[main/:na]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl$$FastClassBySpringCGLIB$$3ce4e158.invoke(<generated>) ~[main/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.24.jar:5.3.24]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl$$EnhancerBySpringCGLIB$$76bda6f5.getCategoryProvider(<generated>) ~[main/:na]
-	at com.jpaexample.service.QuerydslTest.getProductListJoin(QuerydslTest.java:83) ~[test/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.2.jar:1.8.2]
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86) ~[na:na]
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[na:na]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[na:na]
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[na:na]
-	at com.sun.proxy.$Proxy2.stop(Unknown Source) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[na:na]
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[na:na]
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113) ~[na:na]
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65) ~[na:na]
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
-
-2023-01-18 20:19:48.735 ERROR 22084 --- [    Test worker] o.h.hql.internal.ast.ErrorTracker        : <AST>:0:0: unexpected end of subtree
-2023-01-18 20:19:48.742 ERROR 22084 --- [    Test worker] o.h.hql.internal.ast.ErrorTracker        : <AST>:0:0: unexpected end of subtree
-
-antlr.NoViableAltException: unexpected end of subtree
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.exprOrSubquery(HqlSqlBaseWalker.java:4879) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4264) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2180) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:841) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:635) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:339) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:287) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:276) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:192) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:636) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:748) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.24.jar:5.3.24]
-	at com.sun.proxy.$Proxy124.createQuery(Unknown Source) ~[na:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:132) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:125) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.fetch(AbstractJPAQuery.java:242) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl.getCategoryProvider(ProductRepositoryCustomImpl.java:168) ~[main/:na]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl$$FastClassBySpringCGLIB$$3ce4e158.invoke(<generated>) ~[main/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.24.jar:5.3.24]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl$$EnhancerBySpringCGLIB$$76bda6f5.getCategoryProvider(<generated>) ~[main/:na]
-	at com.jpaexample.service.QuerydslTest.getProductListJoin(QuerydslTest.java:83) ~[test/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.2.jar:1.8.2]
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86) ~[na:na]
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[na:na]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[na:na]
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[na:na]
-	at com.sun.proxy.$Proxy2.stop(Unknown Source) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[na:na]
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[na:na]
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113) ~[na:na]
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65) ~[na:na]
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
-
-2023-01-18 20:19:48.744 ERROR 22084 --- [    Test worker] o.h.hql.internal.ast.ErrorTracker        :  left-hand operand of a binary operator was null
-2023-01-18 20:19:48.751 ERROR 22084 --- [    Test worker] o.h.hql.internal.ast.ErrorTracker        :  left-hand operand of a binary operator was null
-
-antlr.SemanticException: left-hand operand of a binary operator was null
-	at org.hibernate.hql.internal.ast.tree.BinaryLogicOperatorNode.initialize(BinaryLogicOperatorNode.java:41) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.HqlSqlWalker.prepareLogicOperator(HqlSqlWalker.java:1489) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4737) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2180) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:841) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:635) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:339) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:287) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:276) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:192) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:636) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:748) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:114) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.24.jar:5.3.24]
-	at com.sun.proxy.$Proxy124.createQuery(Unknown Source) ~[na:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:132) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.createQuery(AbstractJPAQuery.java:125) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.querydsl.jpa.impl.AbstractJPAQuery.fetch(AbstractJPAQuery.java:242) ~[querydsl-jpa-5.0.0.jar:na]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl.getCategoryProvider(ProductRepositoryCustomImpl.java:168) ~[main/:na]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl$$FastClassBySpringCGLIB$$3ce4e158.invoke(<generated>) ~[main/:na]
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708) ~[spring-aop-5.3.24.jar:5.3.24]
-	at com.jpaexample.repository.ProductRepositoryCustomImpl$$EnhancerBySpringCGLIB$$76bda6f5.getCategoryProvider(<generated>) ~[main/:na]
-	at com.jpaexample.service.QuerydslTest.getProductListJoin(QuerydslTest.java:83) ~[test/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725) ~[junit-platform-commons-1.8.2.jar:1.8.2]
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66) ~[junit-jupiter-engine-5.8.2.jar:5.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541) ~[na:na]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.8.2.jar:1.8.2]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67) ~[na:na]
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86) ~[na:na]
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86) ~[na:na]
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[na:na]
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[na:na]
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[na:na]
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[na:na]
-	at com.sun.proxy.$Proxy2.stop(Unknown Source) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[na:na]
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[na:na]
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[na:na]
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113) ~[na:na]
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65) ~[na:na]
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
-
-2023-01-18 20:19:48.766  INFO 22084 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@6a175569 testClass = QuerydslTest, testInstance = com.jpaexample.service.QuerydslTest@22f0e329, testMethod = getProductListJoin@QuerydslTest, testException = org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name
-from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider
-where product.name = ?1]; nested exception is java.lang.IllegalArgumentException: org.hibernate.hql.internal.ast.QuerySyntaxException: Invalid path: 'product.name' [select category.name, provider.name
-from com.jpaexample.entity.Category category, com.jpaexample.entity.Provider provider
-where product.name = ?1], mergedContextConfiguration = [WebMergedContextConfiguration@11963225 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@ed3068a, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@f73dcd6, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@30d4b288, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@14c01636, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@13e3c1c7, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+        product product0_
+2023-01-23 21:48:07.848 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [50]
+2023-01-23 21:48:07.850 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [재고 있음]
+2023-01-23 21:48:07.850 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [INTEGER] - [1]
+2023-01-23 21:48:07.850 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [INTEGER] - [49]
+2023-01-23 21:48:07.850 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [품절 임박]
+2023-01-23 21:48:07.856 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [갤럭시 플립Z]
+2023-01-23 21:48:07.856 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [갤럭시 폴드]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [아이폰 8]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [아이폰 9]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [아이폰 10]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.857 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [아이폰 11]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [아이폰 12]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [아이폰 13]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [품절]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [아이폰 14]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [품절 임박]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 1]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.858 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 2]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 3]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 4]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 5]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 1]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.859 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 2]
+2023-01-23 21:48:07.860 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.860 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 3]
+2023-01-23 21:48:07.860 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.860 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [마우스 4]
+2023-01-23 21:48:07.860 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+2023-01-23 21:48:07.860 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_0_0_] : [VARCHAR]) - [에어팟]
+2023-01-23 21:48:07.860 TRACE 30128 --- [    Test worker] o.h.type.descriptor.sql.BasicExtractor   : extracted value ([col_1_0_] : [VARCHAR]) - [재고 있음]
+productStock = [[갤럭시 플립Z, 재고 있음], [갤럭시 폴드, 재고 있음], [아이폰 8, 재고 있음], [아이폰 9, 재고 있음], [아이폰 10, 재고 있음], [아이폰 11, 재고 있음], [아이폰 12, 재고 있음], [아이폰 13, 품절], [아이폰 14, 품절 임박], [마우스 1, 재고 있음], [마우스 2, 재고 있음], [마우스 3, 재고 있음], [마우스 4, 재고 있음], [마우스 5, 재고 있음], [마우스 1, 재고 있음], [마우스 2, 재고 있음], [마우스 3, 재고 있음], [마우스 4, 재고 있음], [에어팟, 재고 있음]]
+2023-01-23 21:48:07.871  INFO 30128 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@11ee02f8 testClass = QuerydslTest, testInstance = com.jpaexample.service.QuerydslTest@7552f05b, testMethod = getProductCaseStock@QuerydslTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4102b1b1 testClass = QuerydslTest, locations = '{}', classes = '{class com.jpaexample.JpaExampleApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@a8e6492, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@40499e4f, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7a791b66, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@61884cb1, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6c6c5427, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@5f20155b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

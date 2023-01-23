@@ -1,9 +1,10 @@
 package com.jpaexample.service;
 
-import com.jpaexample.dto.CategoryProviderDto;
+import com.jpaexample.dto.ProductDto;
 import com.jpaexample.dto.search.ProductSearch;
 import com.jpaexample.entity.Product;
 import com.jpaexample.repository.ProductRepositoryCustom;
+import com.querydsl.core.Tuple;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -68,19 +69,56 @@ public class QuerydslTest {
 
     }
 
+    /**
+     * 제품 집계
+     */
     @Test
-    void getProductListJoin(){
+    void getProductAggregation(){
+        
+        List<Tuple> aggregation = productRepositoryCustom.getProductAggregation();
 
-        String categoryName = "이어폰";
-
-        List<Product> productList1 = productRepositoryCustom.getProductListJoin(categoryName);
-//        System.out.println(productList1.get(0));
-
-        //List<Product> productList2 = productRepositoryCustom.getProductListTest(categoryName);
-        //System.out.println(productList2.get(0));
-        //System.out.println(productList2.get(0).getProductDetail().getDetail());
-
-        List<CategoryProviderDto> categoryProviderDtoList = productRepositoryCustom.getCategoryProvider("아이폰8");
+        Tuple result = aggregation.get(0);
+        System.out.println("result = " + result);
+        
     }
+
+    /**
+     * 제조사별 휴대폰 평균가 - Tuple & Dto
+     */
+    @Test
+    void getProductGroupByProvider(){
+
+        List<Tuple> tuple = productRepositoryCustom.getProductTuple();
+
+        System.out.println("tuple.get(0) = " + tuple.get(0));
+        System.out.println("tuple.get(1) = " + tuple.get(1));
+        
+        List<ProductDto> dto = productRepositoryCustom.getProductDto();
+        System.out.println("dto = " + dto);
+
+    }
+
+    /**
+     * 서브 쿼리
+     */
+    @Test
+    void getProductSubQuery(){
+
+        List<Tuple> maxPrice = productRepositoryCustom.getProductMinAvgPrice();
+        System.out.println("maxPrice = " + maxPrice.get(0));
+        
+    }
+
+    /**
+     * 재고 상태
+     */
+    @Test
+    void getProductCaseStock(){
+
+        List<Tuple> productStock = productRepositoryCustom.getProductCaseStock();
+        System.out.println("productStock = " + productStock);
+        
+    }
+
 
 }

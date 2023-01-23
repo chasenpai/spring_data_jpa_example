@@ -3,6 +3,7 @@ package com.jpaexample.repository;
 import com.jpaexample.dto.ProductDto;
 import com.jpaexample.dto.search.ProductSearch;
 import com.jpaexample.entity.Product;
+import com.querydsl.core.Tuple;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,10 +15,14 @@ public interface ProductRepositoryCustom {
 
     Page<Product> getProductListPaging(Pageable pageable);
 
-    List<ProductDto> getProductDtoList();
+    List<Tuple> getProductAggregation();
 
-    List<Product> getProductListJoin(String categoryName);
+    List<Tuple> getProductTuple();
 
-    List<Product> getProductListTest(String categoryName);
+    List<ProductDto> getProductDto();
+
+    List<Tuple> getProductMinAvgPrice();
+
+    List<Tuple> getProductCaseStock();
 
 }

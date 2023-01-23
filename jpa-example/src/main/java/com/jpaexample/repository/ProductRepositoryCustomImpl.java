@@ -1,13 +1,14 @@
 package com.jpaexample.repository;
 
-import com.jpaexample.dto.CategoryProviderDto;
 import com.jpaexample.dto.ProductDto;
-import com.jpaexample.dto.QCategoryProviderDto;
 import com.jpaexample.dto.QProductDto;
 import com.jpaexample.dto.search.ProductSearch;
 import com.jpaexample.entity.*;
+import com.querydsl.core.Tuple;
 import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.CaseBuilder;
 import com.querydsl.core.types.dsl.Wildcard;
+import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -114,43 +115,102 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
     }
 
     /**
-     * Projection
-     * 테이블에서 원하는 컬럼만 뽑아서 조회할 수 있다
-     * 아래 예시는 @QueryProjection 을 사용한 불변 QDto 클래스 생성 방식
+     * 집계 함수 사용
      */
     @Override
-    public List<ProductDto> getProductDtoList() {
+    public List<Tuple> getProductAggregation() {
         return queryFactory
                 .select(
-                        new QProductDto(
-                                product.id,
-                                product.category.name,
-                                product.provider.name,
-                                product.name,
-                                product.price,
-                                product.productDetail.detail
-                        )
+                        product.count(), //제품 총 개수
+                        product.price.sum(), //총합
+                        product.price.avg(), //평균가
+                        product.price.max(), //최고가
+                        product.price.min() //최저가
                 )
                 .from(product)
                 .fetch();
     }
 
+    /**
+     * group by, having 사용 - 제조사별 휴대폰 평균가
+     * 프로젝션(select 대상 지정) 대상이 둘 이상일 땐 튜플, DTO 조회를 사용
+     */
     @Override
-    public List<Product> getProductListJoin(String categoryName) {
+    public List<Tuple> getProductTuple() {
         return queryFactory
-                .selectFrom(product)
-                .join(product.category, category)
-                .on(category.name.eq(categoryName))
+                .select(
+                        product.category.name,
+                        product.provider.name,
+                        product.price.avg()
+                )
+                .from(product)
+                .groupBy(product.provider)
+                .having(product.category.name.eq("휴대폰"))
                 .fetch();
     }
 
+    /**
+     * DTO 조회
+     * - 아래 예시는 @QueryProjection 을 사용한 불변 QDto 클래스 생성 방식
+     * - 컴파일러로 타입을 체크할 수 있는 가장 안전한 방식
+     */
     @Override
-    public List<Product> getProductListTest(String categoryName) {
+    public List<ProductDto> getProductDto() {
         return queryFactory
-                .selectFrom(product)
-                .where(
-                        product.category.name.eq(categoryName)
+                .select(
+                        new QProductDto(
+                                product.category.name,
+                                product.provider.name,
+                                product.price.avg().castToNum(Integer.class) //타입 변환
+                        )
                 )
+                .from(product)
+                .groupBy(product.provider)
+                .having(product.category.name.eq("휴대폰"))
+                .fetch();
+    }
+
+    /**
+     * 서브쿼리 사용 - 최저가 휴대폰 & 평균가
+     * - from 절의 서브쿼리는 지원하지 않는다 > join 사용 또는 쿼리 분리 실행
+     */
+    @Override
+    public List<Tuple> getProductMinAvgPrice() {
+        return queryFactory
+                .select(
+                        product.name,
+                        product.price,
+                        JPAExpressions
+                                .select(product.price.avg())
+                                .from(product)
+                )
+                .from(product)
+                .where(product.price.eq(
+                        JPAExpressions
+                                .select(product.price.min())
+                                .from(product)
+                        ),
+                        product.category.name.eq("휴대폰")
+                )
+                .fetch();
+    }
+
+    /**
+     * case 문 사용 - 재고 상태
+     */
+    @Override
+    public List<Tuple> getProductCaseStock() {
+        return queryFactory
+                .select(
+                        product.name,
+                        new CaseBuilder()
+                                .when(product.stock.gt(50)) //gt >
+                                .then("재고 있음")
+                                .when(product.stock.between(1, 49))
+                                .then("품절 임박")
+                                .otherwise("품절")
+                )
+                .from(product)
                 .fetch();
     }
 }
