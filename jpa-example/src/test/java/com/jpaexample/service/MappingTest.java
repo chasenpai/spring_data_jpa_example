@@ -78,14 +78,15 @@ public class MappingTest {
          * - 조회시 연관된 엔티티까지 조회해옴 > 연관관계가 복잡하다면 성능 저하를 일으킬 수 있음
          */
         Product product = productRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
-
+        System.out.println("product detail = " + product.getProductDetail().getDetail());
+        
         /**
          * 지연로딩이 설정된 엔티티
          * - 연관된 엔티티를 사용하는 시점에 쿼리를 날림
          * - OneToMany 의 경우 지연로딩(LAZY)이 기본 값이다
          */
         Provider provider = providerRepository.findById(1L).orElseThrow(EntityNotFoundException::new);
-        System.out.println("productList = " + provider.getProductList());
+        System.out.println("product name = " + provider.getProductList().get(0).getName());
         //지연로딩으로 product 엔티티를 조회할 경우 트랜잭션처리가 되어있지 않으면 proxy no session 오류가 발생한다
 
     }

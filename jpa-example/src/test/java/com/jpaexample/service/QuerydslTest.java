@@ -3,6 +3,7 @@ package com.jpaexample.service;
 import com.jpaexample.dto.ProductDto;
 import com.jpaexample.dto.search.ProductSearch;
 import com.jpaexample.entity.Product;
+import com.jpaexample.repository.ProductRepository;
 import com.jpaexample.repository.ProductRepositoryCustom;
 import com.querydsl.core.Tuple;
 import org.junit.jupiter.api.Test;
@@ -19,6 +20,8 @@ import java.util.List;
 @Transactional
 public class QuerydslTest {
 
+    @Autowired
+    ProductRepository productRepository;
     @Autowired
     ProductRepositoryCustom productRepositoryCustom;
 
@@ -95,6 +98,26 @@ public class QuerydslTest {
         
         List<ProductDto> dto = productRepositoryCustom.getProductDto();
         System.out.println("dto = " + dto);
+
+    }
+
+    /**
+     * 페치 조인
+     */
+    @Test
+    void getProductFetchJoin(){
+
+        List<Product> productList1 = productRepository.findAll();
+
+        for(Product p : productList1){
+            System.out.println("product name = " + p.getName() + "/ category name = " + p.getCategory().getName());
+        }
+
+        List<Product> productList2 = productRepositoryCustom.getProductFetchJoin();
+
+        for(Product p : productList2){
+            System.out.println("product name = " + p.getName() + "/ category name = " + p.getCategory().getName());
+        }
 
     }
 

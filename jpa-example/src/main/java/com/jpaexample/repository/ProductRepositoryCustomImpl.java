@@ -171,6 +171,20 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
     }
 
     /**
+     * 페치 조인
+     * - N + 1 문제 해결
+     * - 즉시로딩으로 product, category, provider 한번에 조회
+     */
+    @Override
+    public List<Product> getProductFetchJoin() {
+        return queryFactory
+                .selectFrom(product)
+                .join(product.category, category).fetchJoin()
+                .join(product.provider, provider).fetchJoin()
+                .fetch();
+    }
+
+    /**
      * 서브쿼리 사용 - 최저가 휴대폰 & 평균가
      * - from 절의 서브쿼리는 지원하지 않는다 > join 사용 또는 쿼리 분리 실행
      */

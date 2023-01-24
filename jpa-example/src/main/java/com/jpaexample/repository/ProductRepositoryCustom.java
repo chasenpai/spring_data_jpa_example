@@ -21,6 +21,8 @@ public interface ProductRepositoryCustom {
 
     List<ProductDto> getProductDto();
 
+    List<Product> getProductFetchJoin();
+
     List<Tuple> getProductMinAvgPrice();
 
     List<Tuple> getProductCaseStock();
