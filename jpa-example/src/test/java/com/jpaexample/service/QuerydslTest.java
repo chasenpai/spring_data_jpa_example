@@ -14,6 +14,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @SpringBootTest
@@ -107,11 +108,11 @@ public class QuerydslTest {
     @Test
     void getProductFetchJoin(){
 
-        List<Product> productList1 = productRepository.findAll();
-
-        for(Product p : productList1){
-            System.out.println("product name = " + p.getName() + "/ category name = " + p.getCategory().getName());
-        }
+//        List<Product> productList1 = productRepository.findAll();
+//
+//        for(Product p : productList1){
+//            System.out.println("product name = " + p.getName() + "/ category name = " + p.getCategory().getName());
+//        }
 
         List<Product> productList2 = productRepositoryCustom.getProductFetchJoin();
 
@@ -119,6 +120,13 @@ public class QuerydslTest {
             System.out.println("product name = " + p.getName() + "/ category name = " + p.getCategory().getName());
         }
 
+    }
+    
+    @Test
+    void test(){
+
+        List<Product> productList1 = productRepository.findAll();
+        
     }
 
     /**

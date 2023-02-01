@@ -160,4 +160,10 @@ public class MappingTest {
 
     }
 
+    @Test
+    void findAll(){
+        List<Category> categoryList = categoryRepository.findAll();
+        System.out.println("categoryList.get(1).getProductList() = " + categoryList.get(1).getProductList());
+    }
+
 }

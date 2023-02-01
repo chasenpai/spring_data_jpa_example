@@ -181,6 +181,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
                 .selectFrom(product)
                 .join(product.category, category).fetchJoin()
                 .join(product.provider, provider).fetchJoin()
+                .leftJoin(product.productDetail, productDetail).fetchJoin()
                 .fetch();
     }
 
