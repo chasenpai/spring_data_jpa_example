@@ -1,4 +1,4 @@
-package com.jpaexample.entity;
+package com.jpaexample.entity.primary;
 
 import lombok.*;
 
@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "provider")
+@Table(name = "category")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
-public class Provider extends BaseTimeEntity{
+public class Category extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,15 +19,14 @@ public class Provider extends BaseTimeEntity{
 
     private String name;
 
-    @OneToMany(mappedBy = "provider", orphanRemoval = true)
-    @ToString.Exclude
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @ToString.Exclude //순환참조 방지
     private List<Product> productList = new ArrayList<>();
 
     @Builder
-    public Provider(Long id, String name, List<Product> productList) {
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.productList = productList;
     }
 
     public void updateProductList(List<Product> productList){

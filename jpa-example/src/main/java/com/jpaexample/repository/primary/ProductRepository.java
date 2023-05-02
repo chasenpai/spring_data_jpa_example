@@ -1,6 +1,6 @@
-package com.jpaexample.repository;
+package com.jpaexample.repository.primary;
 
-import com.jpaexample.entity.Product;
+import com.jpaexample.entity.primary.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

@@ -1,13 +1,13 @@
 package com.jpaexample.service;
 
-import com.jpaexample.entity.Category;
-import com.jpaexample.entity.Product;
-import com.jpaexample.entity.ProductDetail;
-import com.jpaexample.entity.Provider;
-import com.jpaexample.repository.CategoryRepository;
-import com.jpaexample.repository.ProductDetailRepository;
-import com.jpaexample.repository.ProductRepository;
-import com.jpaexample.repository.ProviderRepository;
+import com.jpaexample.entity.primary.Category;
+import com.jpaexample.entity.primary.Product;
+import com.jpaexample.entity.primary.ProductDetail;
+import com.jpaexample.entity.primary.Provider;
+import com.jpaexample.repository.primary.CategoryRepository;
+import com.jpaexample.repository.primary.ProductDetailRepository;
+import com.jpaexample.repository.primary.ProductRepository;
+import com.jpaexample.repository.primary.ProviderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

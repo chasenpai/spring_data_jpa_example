@@ -1,4 +1,4 @@
-package com.jpaexample.entity;
+package com.jpaexample.entity.primary;
 
 import lombok.*;
 

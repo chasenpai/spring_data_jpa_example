@@ -1,9 +1,9 @@
-package com.jpaexample.repository;
+package com.jpaexample.repository.primary;
 
 import com.jpaexample.dto.ProductDto;
 import com.jpaexample.dto.QProductDto;
 import com.jpaexample.dto.search.ProductSearch;
-import com.jpaexample.entity.*;
+import com.jpaexample.entity.primary.*;
 import com.querydsl.core.Tuple;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.CaseBuilder;
@@ -23,7 +23,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
 
-    private final JPAQueryFactory queryFactory;
+    private final JPAQueryFactory primaryQueryFactory;
     private final QProduct product = QProduct.product; //Q class
     private final QCategory category = QCategory.category;
     private final QProvider provider = QProvider.provider;
@@ -34,7 +34,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      */
     @Override
     public List<Product> getProductList(ProductSearch search) {
-        return queryFactory
+        return primaryQueryFactory
                 .selectFrom(product)
                 .where(
                         searchByKey(search), //검색어
@@ -82,7 +82,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
     @Override
     public Page<Product> getProductListPaging(Pageable pageable) {
 
-        List<Product> productList = queryFactory
+        List<Product> productList = primaryQueryFactory
                 .selectFrom(product)
                 .orderBy(product.createdDate.desc()) //정렬 기준
                 .offset(pageable.getOffset()) //데이터 시작 index
@@ -105,7 +105,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      * 총 개수 쿼리
      */
     public Long getProductListCount(Pageable pageable){
-        return queryFactory
+        return primaryQueryFactory
                 .select(Wildcard.count)
                 .from(product)
                 .orderBy(product.createdDate.desc()) //정렬 기준
@@ -119,7 +119,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      */
     @Override
     public List<Tuple> getProductAggregation() {
-        return queryFactory
+        return primaryQueryFactory
                 .select(
                         product.count(), //제품 총 개수
                         product.price.sum(), //총합
@@ -137,7 +137,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      */
     @Override
     public List<Tuple> getProductTuple() {
-        return queryFactory
+        return primaryQueryFactory
                 .select(
                         product.category.name,
                         product.provider.name,
@@ -156,7 +156,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      */
     @Override
     public List<ProductDto> getProductDto() {
-        return queryFactory
+        return primaryQueryFactory
                 .select(
                         new QProductDto(
                                 product.category.name,
@@ -177,7 +177,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      */
     @Override
     public List<Product> getProductFetchJoin() {
-        return queryFactory
+        return primaryQueryFactory
                 .selectFrom(product)
                 .join(product.category, category).fetchJoin()
                 .join(product.provider, provider).fetchJoin()
@@ -191,7 +191,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      */
     @Override
     public List<Tuple> getProductMinAvgPrice() {
-        return queryFactory
+        return primaryQueryFactory
                 .select(
                         product.name,
                         product.price,
@@ -215,7 +215,7 @@ public class ProductRepositoryCustomImpl implements ProductRepositoryCustom {
      */
     @Override
     public List<Tuple> getProductCaseStock() {
-        return queryFactory
+        return primaryQueryFactory
                 .select(
                         product.name,
                         new CaseBuilder()

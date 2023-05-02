@@ -2,9 +2,9 @@ package com.jpaexample.service;
 
 import com.jpaexample.dto.ProductDto;
 import com.jpaexample.dto.search.ProductSearch;
-import com.jpaexample.entity.Product;
-import com.jpaexample.repository.ProductRepository;
-import com.jpaexample.repository.ProductRepositoryCustom;
+import com.jpaexample.entity.primary.Product;
+import com.jpaexample.repository.primary.ProductRepository;
+import com.jpaexample.repository.primary.ProductRepositoryCustom;
 import com.querydsl.core.Tuple;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @SpringBootTest

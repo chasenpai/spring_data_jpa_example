@@ -1,18 +1,17 @@
-package com.jpaexample.entity;
+package com.jpaexample.entity.primary;
 
 import lombok.*;
-import org.springframework.data.jpa.repository.EntityGraph;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "category")
+@Table(name = "provider")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ToString
-public class Category extends BaseTimeEntity{
+public class Provider extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +19,15 @@ public class Category extends BaseTimeEntity{
 
     private String name;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    @ToString.Exclude //순환참조 방지
+    @OneToMany(mappedBy = "provider", orphanRemoval = true)
+    @ToString.Exclude
     private List<Product> productList = new ArrayList<>();
 
     @Builder
-    public Category(Long id, String name) {
+    public Provider(Long id, String name, List<Product> productList) {
         this.id = id;
         this.name = name;
+        this.productList = productList;
     }
 
     public void updateProductList(List<Product> productList){
