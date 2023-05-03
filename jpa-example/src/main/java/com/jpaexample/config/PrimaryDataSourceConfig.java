@@ -21,24 +21,27 @@ import java.util.Properties;
 @Configuration
 @PropertySource({"classpath:application.properties"})
 @EnableJpaRepositories(
-        basePackages = {"com.jpaexample.repository.primary"},
-        entityManagerFactoryRef = "primaryEntityManager",
-        transactionManagerRef = "primaryTransactionManager"
+        basePackages = {"com.jpaexample.repository.primary"}, //JPA Repository 스캔 패키지 지정
+        entityManagerFactoryRef = "primaryEntityManager", //엔티티 매니저 팩토리 참조
+        transactionManagerRef = "primaryTransactionManager" //트랜잭션 매니저 참조
 )
 public class PrimaryDataSourceConfig {
 
+    /**
+     * LocalContainerEntityManagerFactoryBean - 엔티티 매니저 구성
+     */
     @Bean
     @Primary
     public LocalContainerEntityManagerFactoryBean primaryEntityManager() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setPersistenceUnitName("primaryEntityManager");
-        entityManagerFactoryBean.setDataSource(primaryDataSource());
-        entityManagerFactoryBean.setPackagesToScan("com.jpaexample.entity.primary");
+        entityManagerFactoryBean.setPersistenceUnitName("primaryEntityManager"); //엔티티 매니저 팩토리 빈의 이름 설정
+        entityManagerFactoryBean.setDataSource(primaryDataSource()); //데이터베이스 연결 소스 지정
+        entityManagerFactoryBean.setPackagesToScan("com.jpaexample.entity.primary"); //JPA Entity 위치 지정
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
+        entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter); //JPA 공급자 설정
 
-        Properties prop = new Properties();
+        Properties prop = new Properties(); //hibernate property 설정
         prop.setProperty("hibernate.ddl-auto", "none");
         prop.setProperty("hibernate.dialect", "org.hibernate.dialect.MariaDBDialect");
         prop.setProperty("hibernate.show_sql", "true");
@@ -51,6 +54,9 @@ public class PrimaryDataSourceConfig {
         return entityManagerFactoryBean;
     }
 
+    /**
+     * DataSource 생성
+     */
     @Primary
     @Bean
     @ConfigurationProperties(prefix="spring.primary-datasource")
@@ -58,11 +64,14 @@ public class PrimaryDataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
+    /**
+     * JPA 트랜잭션 매니저 생성
+     */
     @Primary
     @Bean
     public PlatformTransactionManager primaryTransactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(primaryEntityManager().getObject());
+        transactionManager.setEntityManagerFactory(primaryEntityManager().getObject()); //해당 엔티티 매니저의 DB와 트랜잭션을 관리
         return transactionManager;
     }
 
